@@ -13,6 +13,7 @@ Installs required:
 		- NodeJS (http://nodejs.org/)
 
 Once you have node set up:
+
 	- Bower (npm install -g bower)
 	- Grunt (npm install -g grunt)
 	- React Tools (npm install -g react-tools)
@@ -23,10 +24,12 @@ Fetching Libraries:
 	npm install
 	bower install
 
-		grunt dev
+	grunt dev
 
 For Client Developement
-		grunt dev-watch
+	
+	grunt dev-watch
 
-	^^ That attaches file listeners to all client files, so anytimes you save it rebuilds everything
+That attaches file listeners to all client files, so anytimes you save it rebuilds everything
+
 --------------------------
