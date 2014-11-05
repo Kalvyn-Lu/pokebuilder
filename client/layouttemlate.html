@@ -1,0 +1,207 @@
+<html>
+<head>
+
+<title></title>
+
+<style type="text/css">
+
+body {
+    background-color: #BBBBBB;
+    color:  #222222;
+    padding: none;
+    margin: none;
+}
+
+#body {
+    border: solid black 1px;
+    width: 800px;
+    padding: 10px;
+}
+
+
+.maxwidth {
+    width: 100%;
+}
+.centered { 
+    margin-left: auto;
+    margin-right: auto;
+}
+.centeredvert {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.verttop {
+    vertical-align: top;
+}
+.image {
+    background-color: #DDDDDD;
+    height: 100px;
+    width: 100px;
+    padding: 5px;
+}
+.stats{
+    width: 175x;
+    padding: 5px;
+}
+
+p{
+    margin: 2px;
+    height: 25px;
+    vertical-align: center;
+}
+
+.width50 {
+    width: 50px;
+}
+.width100 {
+    width: 100px;
+}
+.width200 {
+    width: 200px;
+}
+</style>
+
+</head>
+<body><div id="body" class="centered"><form id="poke1">
+    <table>
+        <tr>
+            <td class="image" class="centered centeredvert">
+                <img src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/gyarados.gif">
+            </td>
+            <td class="stats">
+                <h2 style="margin-bottom: 0px;">Gyarados</h2>
+                <table class="verttop">
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text" name="nick" class="width100" value="Sweepy"</td>
+                    </tr>
+                    <tr>
+                        <td>Level:</td>
+                        <td><input type="text" name="level" class="width100" value="100"</td>
+                    </tr>
+                    <tr>
+                        <td>Shiny:</td>
+                        <td><input type="checkbox" name="shine"></td>
+                    </tr>
+                    <tr>
+                        <td>Female:</td>
+                        <td><input type="checkbox" name="gender" checked="checked"></td>
+                    </tr>
+                    <tr>
+                        <td>Nature:</td>
+                        <td>
+                            <select name="nature" class="width100">
+                                <option>Hardy</option>
+                                <option>Lonely</option>
+                                <option>Brave</option>
+                                <option selected="selected">Adamant</option>
+                                <option>Naughty</option>
+                                <option>Bold</option>
+                                <option>Docile</option>
+                                <option>Relaxed</option>
+                                <option>Impish</option>
+                                <option>Lax</option>
+                                <option>Timid</option>
+                                <option>Hasty</option>
+                                <option>Serious</option>
+                                <option>Jolly</option>
+                                <option>Naive</option>
+                                <option>Modest</option>
+                                <option>Mild</option>
+                                <option>Quiet</option>
+                                <option>Bashful</option>
+                                <option>Rash</option>
+                                <option>Calm</option>
+                                <option>Gentle</option>
+                                <option>Sassy</option>
+                                <option>Careful</option>
+                                <option>Quirky</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>Ability:</td>
+                        <td><input type="Ability" name="level" class="width100" value="Moxie"></td>
+                    </tr>
+                    <tr>
+                        <td>Item:</td>
+                        <td>
+                            <select name="item" class="width100">
+                                <option>Big Root</option>
+                                <option>Blue Scarf</option>
+                                <option>Bright Powder</option>
+                                <option>Choice Band</option>
+                                <option>Choice Scarf</option>
+                                <option>Choice Specs</option>
+                                <option>Destiny Knot</option>
+                                <option>Expert Belt</option>
+                                <option>Band</option>
+                                <option>Focus Sash</option>
+                                <option>Full Incense</option>
+                                <option>Green Scarf</option>
+                                <option>Lagging Tail</option>
+                                <option>Lax Incense</option>
+                                <option selected="selected">Leftovers</option>
+                                <option>Luck Incense</option>
+                                <option>Mental Herb</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p><input name="move1" type="text" value="Rest"></p>
+                            <p><input name="move2" type="text" value="Aqua Tail"></p>
+                            <p><input name="move3" type="text" value="Dragon Dance"></p>
+                            <p><input name="move4" type="text" value="Earthquake"></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td class="stats">
+                <table class="ivs">
+                    <tr>
+                        <td>IV HP:</td>
+                        <td><input name="hpiv" type="text" class="width50" value="31">
+                        <td>EV HP:</td>
+                        <td><input name="hpev" type="text" class="width50" value="31">
+                    </tr>
+                    <tr>
+                        <td>IV Attack:</td>
+                        <td><input name="hpiv" type="text" class="width50" value="31">
+                        <td>EV Attack:</td>
+                        <td><input name="hpev" type="text" class="width50" value="31">
+                    </tr>
+                    <tr>
+                        <td>IV Defense:</td>
+                        <td><input name="hpiv" type="text" class="width50" value="31">
+                        <td>EV Defense:</td>
+                        <td><input name="hpev" type="text" class="width50" value="31">
+                    </tr>
+                    <tr>
+                        <td>IV SAttack:</td>
+                        <td><input name="hpiv" type="text" class="width50" value="31">
+                        <td>EV SAttack:</td>
+                        <td><input name="hpev" type="text" class="width50" value="31">
+                    </tr>
+                    <tr>
+                        <td>IV SDefense:</td>
+                        <td><input name="hpiv" type="text" class="width50" value="31">
+                        <td>EV SDefense:</td>
+                        <td><input name="hpev" type="text" class="width50" value="31">
+                    </tr>
+                    <tr>
+                        <td>IV Speed:</td>
+                        <td><input name="hpiv" type="text" class="width50" value="31">
+                        <td>EV Speed:</td>
+                        <td><input name="hpev" type="text" class="width50" value="31">
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</form></div></body>
+<html>
