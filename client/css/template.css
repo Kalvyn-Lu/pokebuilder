@@ -1,0 +1,90 @@
+body {
+    background-color: #222222;
+    color:  #222222;
+    padding: none;
+    margin: none;
+}
+
+#body {
+    width: 850px;
+    padding: 5px;
+}
+
+
+.maxwidth {
+    width: 100%;
+}
+.centered { 
+    margin-left: auto;
+    margin-right: auto;
+}
+.centeredvert {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.verttop {
+    vertical-align: top;
+}
+
+
+p{
+    margin: 2px;
+    height: 25px;
+    vertical-align: center;
+}
+
+.width50 {
+    width: 50px;
+}
+.width85 {
+    width: 85px;
+}
+.width200 {
+    width: 200px;
+}
+
+.poketable {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 790px;
+}
+
+.image {
+	background-color: #dddddd;
+    border-radius: 15px;
+    text-align: center;
+    height: 150px;
+    width: 150px;
+    min-height: 150px;
+    min-width: 150px;
+    max-height: 150px;
+    max-width: 150px;
+	padding: 0px;
+}
+.set {
+	background-color: #ddaaaa;
+    border-radius: 15px;
+	width: 190px;
+	min-width: 190px;
+	padding: 5px;
+}
+.data{
+	background-color: #aaddaa;
+    border-radius: 15px;
+	width: 150px;
+	min-width: 150px;
+    padding: 5px;
+}
+.stats{
+	background-color: #aaaadd;
+    border-radius: 15px;
+	width: 320px;
+	max-width: 320px;
+	min-width: 320px;
+	padding: 5px;
+}
+.tab {
+    border-radius: 15px;
+    width: 100px;
+    text-align: center;
+}
