@@ -1,5 +1,6 @@
 body {
     background-color: #222222;
+	font-family: "Calibri" sans-serif;
     color:  #222222;
     padding: none;
     margin: none;
@@ -9,8 +10,69 @@ body {
     width: 850px;
     padding: 5px;
 }
+#queryname{
+	text-align: center;
+	color: #dddddd;
+}
+#querytable{
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #dddddd;
+	max-width: 850px;
+}
+#querytable td, #querytable th{
+	padding: 5px;
+	border: solid black 1px;
+	max-width: 500px;
+	overflow: hidden;
+}
+
+#querytable tbody tr:hover{
+	background-color: #aaaaaa;
+}
+
+#image {
+	background-color: #dddddd;
+    border-radius: 15px;
+    text-align: center;
+    height: 150px;
+    width: 150px;
+    min-height: 150px;
+    min-width: 150px;
+    max-height: 150px;
+    max-width: 150px;
+	padding: 0px;
+}
+#set {
+	background-color: #ddaaaa;
+    border-radius: 15px;
+	width: 190px;
+	min-width: 190px;
+	padding: 5px;
+}
+#data{
+	background-color: #aaddaa;
+    border-radius: 15px;
+	width: 150px;
+	min-width: 150px;
+    padding: 5px;
+}
+#stats{
+	background-color: #aaaadd;
+    border-radius: 15px;
+	width: 320px;
+	max-width: 320px;
+	min-width: 320px;
+	padding: 5px;
+}
 
 
+#poketable {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 790px;
+}
 .maxwidth {
     width: 100%;
 }
@@ -32,57 +94,44 @@ p{
     height: 25px;
     vertical-align: center;
 }
-
+h2{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.mons {
+	padding:none;
+	width: 137px;
+	height:	55px;
+	max-width: 137px;
+	border-radius: 15px;
+	background-color: #dddddd;
+}
+.mons:hover{
+	background-color: #aaaaaa;
+}
+.tinypic{
+	max-width: 	50px;
+	max-height: 50px;
+}
 .width50 {
     width: 50px;
 }
 .width85 {
     width: 85px;
 }
+.width100{
+	width: 100px;
+}
+.width125{
+	width: 125px;
+}
+.width180{
+	width: 180px;
+}
 .width200 {
     width: 200px;
 }
 
-.poketable {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	width: 790px;
-}
-
-.image {
-	background-color: #dddddd;
-    border-radius: 15px;
-    text-align: center;
-    height: 150px;
-    width: 150px;
-    min-height: 150px;
-    min-width: 150px;
-    max-height: 150px;
-    max-width: 150px;
-	padding: 0px;
-}
-.set {
-	background-color: #ddaaaa;
-    border-radius: 15px;
-	width: 190px;
-	min-width: 190px;
-	padding: 5px;
-}
-.data{
-	background-color: #aaddaa;
-    border-radius: 15px;
-	width: 150px;
-	min-width: 150px;
-    padding: 5px;
-}
-.stats{
-	background-color: #aaaadd;
-    border-radius: 15px;
-	width: 320px;
-	max-width: 320px;
-	min-width: 320px;
-	padding: 5px;
-}
 .tab {
     border-radius: 15px;
     width: 100px;

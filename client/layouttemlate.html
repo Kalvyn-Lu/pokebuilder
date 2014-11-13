@@ -12,465 +12,235 @@
                 <input type="submit" name="submitex" value="Export Team"/>
                 <input type="submit" name="submitin" value="Import Team"/>
                 <input type="submit" name="submitrules" value="Ruleset"/>
+				<table id="tabs"><tr>
+					<td>
+					<table class="mons">
+						<tr>
+							<td rowspan="3" class="centered centeredvert">
+								<img class="tinypic" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/gyarados.gif" alt="Pokemon Sprite"/>
+							</td>
+							<td>Sweepy</td>
+						</tr>
+						<tr><td><img src="http://serebii.net/itemdex/sprites/leftovers.png"></td></tr>
+					</table>
+					</td>
+<td class="mons"><table><tr><td rowspan="3" class="centered centeredvert"><img class="tinypic" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/gengar.gif" alt="Pokemon Sprite"/></td><td>Pride</td></tr><tr></tr><tr><td><img src="http://serebii.net/itemdex/sprites/blacksludge.png"></td></tr></table></td>
+<td class="mons"><table><tr><td rowspan="3" class="centered centeredvert"><img class="tinypic" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/chansey.gif" alt="Pokemon Sprite"/></td><td>Great Wall</td></tr><tr></tr><tr><td><img src="http://serebii.net/itemdex/sprites/eviolite.png"></td></tr></table></td>
+<td class="mons"><table><tr><td rowspan="3" class="centered centeredvert"><img class="tinypic" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/heatran.gif" alt="Pokemon Sprite"/></td><td>rawr</td></tr><tr></tr><tr><td><img src="http://serebii.net/itemdex/sprites/airballoon.png"></td></tr></table></td>
+<td class="mons"><table><tr><td rowspan="3" class="centered centeredvert"><img class="tinypic" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados-shiny/gardevoir.gif" alt="Pokemon Sprite"/></td><td>Fey</td></tr><tr></tr><tr><td><img src="http://serebii.net/itemdex/sprites/gardevoirite.png"></td></tr></table></td>
+<td class="mons"><table><tr><td rowspan="3" class="centered centeredvert"><img class="tinypic" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/talonflame.gif" alt="Pokemon Sprite"/></td><td>Me First</td></tr><tr></tr><tr><td><img src="http://serebii.net/itemdex/sprites/lifeorb.png"></td></tr></table></td>
+				</tr></table>
                 <hr>
-                <table id="poke1" class="poketable maxwidth">
-                    <tr>
-                        <td class="image" class="centered centeredvert">
-                            <img src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/gyarados.gif" alt="Pokemon Sprite"/>
-                        </td>
-                        <td class="data">
-                            <h2 class="width100" style="margin-bottom: 0px;">
-                                Gyarados
-                            </h2>
-                            <table class="verttop">
-                                <tr>
-                                    <td>
-                                        Name:
-                                    </td>
-                                    <td>
-                                        <input type="text" name="nick1" class="width85" value="Sweepy"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Level:
-                                    </td>
-                                    <td>
-                                        <input type="text" name="level1" class="width85" value="100"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Shiny:
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" name="shine1"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Gender:
-                                    </td>
-                                    <td>
-                                        M<input type="radio" name="gender1" value="m"/>
-                                        F<input type="radio" name="gender1" value="f" checked="checked"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Nature:
-                                    </td>
-                                    <td>
-                                        <select name="nature1" class="width85">
-                                            <option>Hardy</option>
-                                            <option>Lonely</option>
-                                            <option>Brave</option>
-                                            <option selected="selected">Adamant</option>
-                                            <option>Naughty</option>
-                                            <option>Bold</option>
-                                            <option>Docile</option>
-                                            <option>Relaxed</option>
-                                            <option>Impish</option>
-                                            <option>Lax</option>
-                                            <option>Timid</option>
-                                            <option>Hasty</option>
-                                            <option>Serious</option>
-                                            <option>Jolly</option>
-                                            <option>Naive</option>
-                                            <option>Modest</option>
-                                            <option>Mild</option>
-                                            <option>Quiet</option>
-                                            <option>Bashful</option>
-                                            <option>Rash</option>
-                                            <option>Calm</option>
-                                            <option>Gentle</option>
-                                            <option>Sassy</option>
-                                            <option>Careful</option>
-                                            <option>Quirky</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td class="set">
-                            <table>
-                                <tr>
-                                    <td>
-                                        Ability:
-                                    </td>
-                                    <td>
-                                        <select name="ability1">
-                                            <option value="intimidate">Intimidate</option>
-                                            <option value="intimidate">Intimidate</option>
-                                            <option value="moxie">Moxie</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Item:
-                                    </td>
-                                    <td>
-                                        <select name="item1" class="width85">
-                                            <option value="0">Big Root</option>
-                                            <option value="1">Blue Scarf</option>
-                                            <option value="2">Bright Powder</option>
-                                            <option value="3">Choice Band</option>
-                                            <option value="4">Choice Scarf</option>
-                                            <option value="5">Choice Specs</option>
-                                            <option value="6">Destiny Knot</option>
-                                            <option value="7">Expert Belt</option>
-                                            <option value="8">Band</option>
-                                            <option value="9">Focus Sash</option>
-                                            <option value="10">Full Incense</option>
-                                            <option value="21">Green Scarf</option>
-                                            <option value="32">Lagging Tail</option>
-                                            <option value="43">Lax Incense</option>
-                                            <option value="44" selected="selected">Leftovers</option>
-                                            <option value="45">Luck Incense</option>
-                                            <option value="46">Mental Herb</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <p>
-                                            <input name="move11" type="text" value="Rest"/>
-                                        </p>
-                                        <p>
-                                            <input name="move21" type="text" value="Aqua Tail"/>
-                                        </p>
-                                        <p>
-                                            <input name="move31" type="text" value="Dragon Dance"/>
-                                        </p>
-                                        <p>
-                                            <input name="move41" type="text" value="Earthquake"/>
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td class="stats">
-                            <table class="maxwidth">
-                                <tr>
-                                    <td width="25%">
-                                        IV HP:
-                                    </td>
-                                    <td width="25%">
-                                        <input name="hpiv1" type="text" class="width50" value="31"/>
-                                    </td>
-                                    <td width="25%">
-                                        EV HP:
-                                    </td>
-                                    <td width="25%">
-                                        <input name="hpev1" type="text" class="width50" value="128"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        IV Atk:
-                                    </td>
-                                    <td>
-                                        <input name="atkiv1" type="text" class="width50" value="31"/>
-                                    </td>
-                                    <td>
-                                        EV Atk:
-                                    </td>
-                                    <td>
-                                        <input name="atkev1" type="text" class="width50" value="252"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        IV Def:
-                                    </td>
-                                    <td>
-                                        <input name="defiv1" type="text" class="width50" value="31"/>
-                                    </td>
-                                    <td>
-                                        EV Def:
-                                    </td>
-                                    <td>
-                                        <input name="defev1" type="text" class="width50" value="0"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        IV SpAtk:
-                                    </td>
-                                    <td>
-                                        <input name="satkiv1" type="text" class="width50" value="31"/>
-                                    </td>
-                                    <td>
-                                        EV SpAtk:
-                                    </td>
-                                    <td>
-                                        <input name="satkev1" type="text" class="width50" value="0"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        IV SpDef:
-                                    </td>
-                                    <td>
-                                        <input name="sdefiv1" type="text" class="width50" value="31"/>
-                                    </td>
-                                    <td>
-                                        EV SpDef:
-                                    </td>
-                                    <td>
-                                        <input name="sdefev1" type="text" class="width50" value="4"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        IV Speed:
-                                    </td>
-                                    <td>
-                                        <input name="spdiv1" type="text" class="width50" value="31"/>
-                                    </td>
-                                    <td>
-                                        EV Speed:
-                                    </td>
-                                    <td>
-                                        <input name="spdev1" type="text" class="width50" value="128"/>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
+<table id="poketable" class="maxwidth">
+	<tr>
+		<td id="image" class="centered centeredvert">
+			<img src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/gyarados.gif" alt="Pokemon Sprite"/>
+		</td>
+		<td id="data">
+			<h2 class="width100">
+				Gyarados
+			</h2>
+			<table class="verttop">
+				<tr>
+					<td>
+						Name:
+					</td>
+					<td>
+						<input type="text" name="nick" class="width85" value="Sweepy"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Level:
+					</td>
+					<td>
+						<input type="text" name="level" class="width85" value="100"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Shiny:
+					</td>
+					<td>
+						<input type="checkbox" name="shine"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Gender:
+					</td>
+					<td>
+						M<input type="radio" name="gender" value="m"/>
+						F<input type="radio" name="gender" value="f" checked="checked"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Nature:
+					</td>
+					<td>
+						<input type="button" name="nature" class="width85" value="Adamant">
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td id="set">
+			<table>
+				<tr>
+					<td>
+						Ability:
+					</td>
+					<td>
+						<input type="button" name="ability" class="width125" value="Intimidate">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Item: 
+					</td>
+					<td>
+						<input type="button" name="item" class="width125" value="Leftovers">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<p>
+							<input name="move1" class="width180" type="button" value="Rest"/>
+						</p>
+						<p>
+							<input name="move2" class="width180" type="button" value="Aqua Tail"/>
+						</p>
+						<p>
+							<input name="move3" class="width180" type="button" value="Dragon Dance"/>
+						</p>
+						<p>
+							<input name="move4" class="width180" type="button" value="Earthquake"/>
+						</p>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td id="stats">
+			<table class="maxwidth">
+				<tr>
+					<td width="25%">
+						IV HP:
+					</td>
+					<td width="25%">
+						<input name="hpiv" type="text" class="width50" value="31"/>
+					</td>
+					<td width="25%">
+						EV HP:
+					</td>
+					<td width="25%">
+						<input name="hpev" type="text" class="width50" value="128"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						IV Atk:
+					</td>
+					<td>
+						<input name="atkiv" type="text" class="width50" value="31"/>
+					</td>
+					<td>
+						EV Atk:
+					</td>
+					<td>
+						<input name="atkev" type="text" class="width50" value="252"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						IV Def:
+					</td>
+					<td>
+						<input name="defiv" type="text" class="width50" value="31"/>
+					</td>
+					<td>
+						EV Def:
+					</td>
+					<td>
+						<input name="defev" type="text" class="width50" value="0"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						IV SpAtk:
+					</td>
+					<td>
+						<input name="satkiv" type="text" class="width50" value="31"/>
+					</td>
+					<td>
+						EV SpAtk:
+					</td>
+					<td>
+						<input name="satkev" type="text" class="width50" value="0"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						IV SpDef:
+					</td>
+					<td>
+						<input name="sdefiv" type="text" class="width50" value="31"/>
+					</td>
+					<td>
+						EV SpDef:
+					</td>
+					<td>
+						<input name="sdefev" type="text" class="width50" value="4"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						IV Speed:
+					</td>
+					<td>
+						<input name="spdiv" type="text" class="width50" value="31"/>
+					</td>
+					<td>
+						EV Speed:
+					</td>
+					<td>
+						<input name="spdev" type="text" class="width50" value="128"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
                 <hr>
-                <table id="poke2" class="poketable maxwidth">
-                    <tr>
-                        <td class="image" class="centered centeredvert">
-                            <img src="http://www.pkparaiso.com/imagenes/xy/sprites/animados-shiny/chansey.gif" alt="Pokemon Sprite"/>
-                        </td>
-                        <td class="data">
-                            <h2 class="width100" style="margin-bottom: 0px;">
-                                Chansey
-                            </h2>
-                            <table class="verttop">
-                                <tr>
-                                    <td>
-                                        Name:
-                                    </td>
-                                    <td>
-                                        <input type="text" name="nick2" class="width85" value="Great Wall"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Level:
-                                    </td>
-                                    <td>
-                                        <input type="text" name="level2" class="width85" value="100"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Shiny:
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" name="shine2" checked="checked"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Gender:
-                                    </td>
-                                    <td>
-                                        M<input type="radio" name="gender2" value="m"/>
-                                        F<input type="radio" name="gender2" value="f" checked="checked"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Nature:
-                                    </td>
-                                    <td>
-                                        <select name="nature2" class="width85">
-                                            <option>Hardy</option>
-                                            <option>Lonely</option>
-                                            <option>Brave</option>
-                                            <option>Adamant</option>
-                                            <option>Naughty</option>
-                                            <option selected="selected">Bold</option>
-                                            <option>Docile</option>
-                                            <option>Relaxed</option>
-                                            <option>Impish</option>
-                                            <option>Lax</option>
-                                            <option>Timid</option>
-                                            <option>Hasty</option>
-                                            <option>Serious</option>
-                                            <option>Jolly</option>
-                                            <option>Naive</option>
-                                            <option>Modest</option>
-                                            <option>Mild</option>
-                                            <option>Quiet</option>
-                                            <option>Bashful</option>
-                                            <option>Rash</option>
-                                            <option>Calm</option>
-                                            <option>Gentle</option>
-                                            <option>Sassy</option>
-                                            <option>Careful</option>
-                                            <option>Quirky</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td class="set">
-                            <table>
-                                <tr>
-                                    <td>
-                                        Ability:
-                                    </td>
-                                    <td>
-                                        <select name="ability2">
-                                            <option value="naturalcure" selected="selected">Natural Cure</option>
-                                            <option value="serenegrace">Serene Grace</option>
-                                            <option value="healer">Healer</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Item:
-                                    </td>
-                                    <td>
-                                        <select name="item2" class="width85">
-                                            <option value="0">Big Root</option>
-                                            <option value="1">Blue Scarf</option>
-                                            <option value="2">Bright Powder</option>
-                                            <option value="3">Choice Band</option>
-                                            <option value="4">Choice Scarf</option>
-                                            <option value="5">Choice Specs</option>
-                                            <option value="6">Destiny Knot</option>
-                                            <option value="7">Expert Belt</option>
-                                            <option value="8">Band</option>
-                                            <option value="9">Focus Sash</option>
-                                            <option value="10">Full Incense</option>
-                                            <option value="21">Green Scarf</option>
-                                            <option value="32">Lagging Tail</option>
-                                            <option value="43">Lax Incense</option>
-                                            <option value="44" selected="selected">Eviolite</option>
-                                            <option value="45">Luck Incense</option>
-                                            <option value="46">Mental Herb</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <p>
-                                            <input name="move12" type="text" value="Wish"/>
-                                        </p>
-                                        <p>
-                                            <input name="move22" type="text" value="Seismic Toss"/>
-                                        </p>
-                                        <p>
-                                            <input name="move32" type="text" value="Heal Bell"/>
-                                        </p>
-                                        <p>
-                                            <input name="move42" type="text" value="Toxic"/>
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td class="stats">
-                            <table class="maxwidth">
-                                <tr>
-                                    <td width="25%">
-                                        IV HP:
-                                    </td>
-                                    <td width="25%">
-                                        <input name="hpiv2" type="text" class="width50" value="31"/>
-                                    </td>
-                                    <td width="25%">
-                                        EV HP:
-                                    </td>
-                                    <td width="25%">
-                                        <input name="hpev2" type="text" class="width50" value="252"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        IV Atk:
-                                    </td>
-                                    <td>
-                                        <input name="atkiv2" type="text" class="width50" value="0"/>
-                                    </td>
-                                    <td>
-                                        EV Atk:
-                                    </td>
-                                    <td>
-                                        <input name="atkev2" type="text" class="width50" value="0"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        IV Def:
-                                    </td>
-                                    <td>
-                                        <input name="defiv2" type="text" class="width50" value="31"/>
-                                    </td>
-                                    <td>
-                                        EV Def:
-                                    </td>
-                                    <td>
-                                        <input name="defev2" type="text" class="width50" value="132"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        IV SpAtk:
-                                    </td>
-                                    <td>
-                                        <input name="satkiv2" type="text" class="width50" value="31"/>
-                                    </td>
-                                    <td>
-                                        EV SpAtk:
-                                    </td>
-                                    <td>
-                                        <input name="satkev2" type="text" class="width50" value="0"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        IV SpDef:
-                                    </td>
-                                    <td>
-                                        <input name="sdefiv2" type="text" class="width50" value="31"/>
-                                    </td>
-                                    <td>
-                                        EV SpDef:
-                                    </td>
-                                    <td>
-                                        <input name="sdefev2" type="text" class="width50" value="128"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        IV Speed:
-                                    </td>
-                                    <td>
-                                        <input name="spdiv2" type="text" class="width50" value="31"/>
-                                    </td>
-                                    <td>
-                                        EV Speed:
-                                    </td>
-                                    <td>
-                                        <input name="spdev2" type="text" class="width50" value="0"/>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-                <hr>
-                <p style="color:white">...You get the idea</p>
             </form>
+<h1 id="queryname">Legal Natures</h1>
+<table id="querytable">
+	<tr><th>Name</th><th>Boosted Stat</th><th>Dropped Stat</th></tr>
+	<tr><td>Hardy</td><td>Attack</td><td>Attack</td></tr>
+	<tr><td>Lonely</td><td>Attack</td><td>Defense</td></tr>
+	<tr><td>Brave</td><td>Attack</td><td>Speed</td></tr>
+	<tr><td>Adamant</td><td>Attack</td><td>Sp. Attack</td></tr>
+	<tr><td>Naughty</td><td>Attack</td><td>Sp. Defense</td></tr>
+	<tr><td>Bold</td><td>Defense</td><td>Attack</td></tr>
+	<tr><td>Docile</td><td>Defense</td><td>Defense</td></tr>
+	<tr><td>Relaxed</td><td>Defense</td><td>Speed</td></tr>
+	<tr><td>Impish</td><td>Defense</td><td>Sp. Attack</td></tr>
+	<tr><td>Lax</td><td>Defense</td><td>Sp. Defense</td></tr>
+	<tr><td>Timid</td><td>Speed</td><td>Attack</td></tr>
+	<tr><td>Hasty</td><td>Speed</td><td>Defense</td></tr>
+	<tr><td>Serious</td><td>Speed</td><td>Speed</td></tr>
+	<tr><td>Jolly</td><td>Speed</td><td>Sp. Attack</td></tr>
+	<tr><td>Naive</td><td>Speed</td><td>Sp. Defense</td></tr>
+	<tr><td>Modest</td><td>Sp. Attack</td><td>Attack</td></tr>
+	<tr><td>Mild</td><td>Sp. Attack</td><td>Defense</td></tr>
+	<tr><td>Quiet</td><td>Sp. Attack</td><td>Speed</td></tr>
+	<tr><td>Bashful</td><td>Sp. Attack</td><td>Sp. Attack</td></tr>
+	<tr><td>Rash</td><td>Sp. Attack</td><td>Sp. Defense</td></tr>
+	<tr><td>Calm</td><td>Sp. Defense</td><td>Attack</td></tr>
+	<tr><td>Gentle</td><td>Sp. Defense</td><td>Defense</td></tr>
+	<tr><td>Sassy</td><td>Sp. Defense</td><td>Speed</td></tr>
+	<tr><td>Careful</td><td>Sp. Defense</td><td>Sp. Attack</td></tr>
+	<tr><td>Quirky</td><td>Sp. Defense</td><td>Sp. Defense</td></tr>
+</table>
         </div>
     </body>
 <html>
