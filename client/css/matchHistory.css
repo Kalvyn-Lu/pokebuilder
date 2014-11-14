@@ -1,0 +1,59 @@
+.matchHistoryElement {
+	background: #fff;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	-webkit-border-radius: 3px;
+	cursor: pointer;
+}
+.matchHistoryElement:hover {
+	
+}
+	.matchHistoryElement .item {
+		max-width:48px;
+		max-height:48px;
+		height:100%;
+		width:100%;
+		background-size: 100% 100%;
+    	background-repeat: no-repeat;
+    	display: inline-block;
+	}
+	.matchHistoryElement .portrait {
+		flex-direction: column;
+		margin-right:10px;
+		width:75px;
+	}
+	.matchHistoryElement.selected {
+		border-color: #777;
+	}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 750px) {
+	.matchHistoryElement {
+		
+	}
+		.matchHistoryElement .portrait {
+			flex-direction:row;
+			margin-bottom:5px;
+			width: auto;
+		}
+		.matchHistoryElement .championName {
+			padding: 14px;
+		}
+		.matchHistoryElement .info {
+			flex-direction:column;
+		}
+			.matchHistoryElement .info > div {
+				text-align: right;
+			}
+}
+
+@media only screen and (max-width : 510px) {
+	.matchHistoryElement .portrait {
+		flex-direction: column;
+		margin-right:10px;
+		width:75px;
+	}
+	.matchHistoryElement .championName {
+		padding: 0px;
+	}
+}
