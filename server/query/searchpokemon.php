@@ -2,101 +2,113 @@
 
 require_once("getquery.php");
 
-$type1 = $_GET["type1"] or FALSE;
-$type2 = $_GET["type2"] or FALSE;
+function get($key) {
+    if (empty($_GET[$key])) {
+        return FALSE;
+    }
+    return $_GET[$key];
+}
 
-$move0 = $_GET["move0"] or FALSE;
-$move1 = $_GET["move1"] or FALSE;
-$move2 = $_GET["move2"] or FALSE;
-$move3 = $_GET["move3"] or FALSE;
-$moves = $move0 or $move1 or $move2 or $move3;
+$type1 = get("type1") ;
+$type2 = get("type2") ;
+/*
+$move0 = get("move0") ;
+$move1 = get("move1") ;
+$move2 = get("move2") ;
+$move3 = get("move3") ;
+$moves = $move0 or $move1 or $move2 or $move3;*/
 
-$ability = $_GET["ability"] or FALSE;
+$ability = get("ability") ;
 
-$maxhp = $_GET["maxhp"] or FALSE;
-$maxatk = $_GET["maxatk"] or FALSE;
-$maxdef = $_GET["maxdef"] or FALSE;
-$maxsatk = $_GET["maxsatk"] or FALSE;
-$maxsdef = $_GET["maxsdef"] or FALSE;
-$maxspd = $_GET["maxspd"] or FALSE;
+$maxhp = get("maxhp") ;
+$maxatk = get("maxatk") ;
+$maxdef = get("maxdef") ;
+$maxsatk = get("maxsatk") ;
+$maxsdef = get("maxsdef") ;
+$maxspd = get("maxspd") ;
 $maxstats = $maxhp || $maxatk || $maxdef || $maxsatk || $maxsdef || $maxspd;
 
-$minhp = $_GET["minhp"] or FALSE;
-$minatk = $_GET["minatk"] or FALSE;
-$mindef = $_GET["mindef"] or FALSE;
-$minsatk = $_GET["minsatk"] or FALSE;
-$minsdef = $_GET["minsdef"] or FALSE;
-$minspd = $_GET["minspd"] or FALSE;
+$minhp = get("minhp") ;
+$minatk = get("minatk") ;
+$mindef = get("mindef") ;
+$minsatk = get("minsatk") ;
+$minsdef = get("minsdef") ;
+$minspd = get("minspd") ;
 $minstats = $minhp || $minatk || $mindef || $minsatk || $minsdef || $minspd;
 
 $query = "
 SELECT
-    s.'name' as \"species\",
-    s.'type1' as \"type1\",
-    s.'type2' as \"type2\"
+    s.name as \"name\",
+    s.type1 as \"type1\",
+    s.type2 as \"type2\"
 ";
 if ($maxstats || $minstats) {
     $query.="
-    ,s.'hp' as \"hp\",
-    s.'atk' as \"atk\",
-    s.'def' as \"def\",
-    s.'satk' as \"satk\",
-    s.'sdef' as \"sdef\",
-    s.'spd' as \"spd\"
+    ,s.hp as \"hp\",
+    s.atk as \"atk\",
+    s.def as \"def\",
+    s.satk as \"satk\",
+    s.sdef as \"sdef\",
+    s.spd as \"spd\"
     ";
 }
-$query.="FROM species as s";
-if ($moves) {
+$query.="FROM species as s ";
+/*if ($moves) {
     $query.=", moves as m";
-}
+}*/
 
-$query.="WHERE 1=1";
+$array = array();;
+$i = 0;
 if ($type1) {
-    $query.="AND (s.'type1'='$type1' OR s.'type2'='$type1')";
+    $array[$i++] = "(s.type1='$type1' OR s.type2='$type1')";
 }
 if ($type2) {
-    $query.="AND (s.'type1'='$type2' OR s.'type2'='$type2')";
+    $array[$i++] = "(s.type1='$type2' OR s.type2='$type2')";
 }
 if ($ability) {
-    $query.="AND (s.'ability1'='$ability OR s.'ability2'='$ability' OR s.'ability3'='$ability')";
+    $array[$i++] = "(s.ability1=$ability OR s.ability2=$ability OR s.ability3=$ability)";
 }
 if ($minhp) {
-    $query.="AND ($minhp <= s.'hp')";
+    $array[$i++] = "($minhp <= s.hp)";
 }
 if ($minatk) {
-    $query.="AND ($minatk <= s.'atk')";
+    $array[$i++] = "($minatk <= s.atk)";
 }
 if ($mindef) {
-    $query.="AND ($mindef <= s.'def')";
+    $array[$i++] = "($mindef <= s.def)";
 }
 if ($minsatk) {
-    $query.="AND ($minsatk <= s.'satk')";
+    $array[$i++] = "($minsatk <= s.satk)";
 }
 if ($minsdef) {
-    $query.="AND ($minsdef <= s.'sdef')";
+    $array[$i++] = "($minsdef <= s.sdef)";
 }
 if ($minspd) {
-    $query.="AND ($minspd <= s.'spd')";
+    $array[$i++] = "($minspd <= s.spd)";
 }
 if ($maxhp) {
-    $query.="AND ($maxhp >= s.'hp')";
+    $array[$i++] = "($maxhp >= s.hp)";
 }
 if ($maxatk) {
-    $query.="AND ($maxatk >= s.'atk')";
+    $array[$i++] = "($maxatk >= s.atk)";
 }
 if ($maxdef) {
-    $query.="AND ($maxdef >= s.'def')";
+    $array[$i++] = "($maxdef >= s.def)";
 }
 if ($maxsatk) {
-    $query.="AND ($maxsatk >= s.'satk')";
+    $array[$i++] = "($maxsatk >= s.satk)";
 }
 if ($maxsdef) {
-    $query.="AND ($maxsdef >= s.'sdef')";
+    $array[$i++] = "($maxsdef >= s.sdef)";
 }
 if ($maxspd) {
-    $query.="AND ($maxspd >= s.'spd')";
+    $array[$i++] = "($maxspd >= s.spd)";
 }
-
+if ($i != 0) {
+    $query .= "WHERE ".implode("AND", $array);
+}
 $result = run_query($query);
+
+echo $json = to_json($result);
 
 ?>
