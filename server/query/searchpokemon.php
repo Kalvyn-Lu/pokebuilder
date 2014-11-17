@@ -2,12 +2,6 @@
 
 require_once("getquery.php");
 
-function get($key) {
-    if (empty($_GET[$key])) {
-        return FALSE;
-    }
-    return $_GET[$key];
-}
 
 $type1 = get("type1") ;
 $type2 = get("type2") ;

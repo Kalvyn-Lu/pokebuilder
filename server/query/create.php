@@ -2,6 +2,34 @@
 
 require_once("getquery.php");
 
+
+$released = file_get_contents("all_moves.txt");
+$rlist = explode("\r\n", $released);
+$rlist[0] = substr($rlist[0], 0);
+$query = "";
+foreach ($rlist as $value) {
+    $pos = strpos($value, ":");
+    $id = substr($value, 0, $pos);
+    $data = explode(" ", $value);
+    for ($i = 1; $i < count($data); $i++){
+        run_query("INSERT INTO moveset (move, species, method) VALUES ($data[$i], $id, 'gameplay');\n");
+    }
+}
+//file_put_contents("output.sql", $query);
+die("Done!");
+
+
+$json = json_decode(file_get_contents("dupes.json"));
+
+echo $query = "
+SELECT *
+FROM moveset
+WHERE
+move=".$json[0]["move"]."
+AND species=".$json[0]["species"]."
+";
+die(to_json(run_query($query)));
+
 $names = file_get_contents("items.txt");
 $descs = file_get_contents("items_description.txt");
 

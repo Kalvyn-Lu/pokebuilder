@@ -15,6 +15,14 @@ function run_query($query) {
     return $results;
 }
 
+
+function get($key) {
+    if (empty($_GET[$key])) {
+        return FALSE;
+    }
+    return $_GET[$key];
+}
+
 function dump($result) {
     if ($result->num_rows > 0) {
         $table = "<table>";
