@@ -2,8 +2,10 @@
 
 require_once("getquery.php");
 
-if (! ($s = get("species"))) {
-    die("[]");
+$s = get("species");
+
+if (!$s){
+    die("No species!");
 }
 
 $eggfile = file_get_contents("egg_moves.txt");
@@ -36,34 +38,14 @@ foreach ($alist as $value) {
     break;
 }
 
-$str = "[";
-foreach ($alldata as $key=>$value) {
-    $str .= to_json(run_query("
-    SELECT
-        *
-    FROM
-        move
-    WHERE
-        id=$value
-    ;"));
-}
+$query=
+"SELECT
+    *
+FROM
+    move
+WHERE id=";
 
-$str .= "]";
-
-die($str);
-
-
-$query = "
-SELECT
-    m.name as \"move\",
-    m.power as \"power\",
-    m.accuracy as \"accuracy\",
-    m.category as \"category\",
-    m.pp as \"pp\",
-FROM    
-    move as m
-";
-
+$query.=implode(" OR id=", $alldata);
 $result = run_query($query);
 
 echo to_json($result);

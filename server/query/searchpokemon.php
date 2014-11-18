@@ -5,12 +5,12 @@ require_once("getquery.php");
 
 $type1 = get("type1") ;
 $type2 = get("type2") ;
-/*
+
 $move0 = get("move0") ;
 $move1 = get("move1") ;
 $move2 = get("move2") ;
 $move3 = get("move3") ;
-$moves = $move0 or $move1 or $move2 or $move3;*/
+$moves = $move0 || $move1 || $move2 || $move3;
 
 $ability = get("ability") ;
 
@@ -32,6 +32,7 @@ $minstats = $minhp || $minatk || $mindef || $minsatk || $minsdef || $minspd;
 
 $query = "
 SELECT
+    s.id as \"id\",
     s.name as \"name\",
     s.type1 as \"type1\",
     s.type2 as \"type2\"
@@ -47,9 +48,6 @@ if ($maxstats || $minstats) {
     ";
 }
 $query.="FROM species as s ";
-/*if ($moves) {
-    $query.=", moves as m";
-}*/
 
 $array = array();;
 $i = 0;
@@ -103,6 +101,23 @@ if ($i != 0) {
 }
 $result = run_query($query);
 
-echo $json = to_json($result);
+$json = to_json($result);
+
+if ($moves) {
+    $unjson = json_decode($json);
+
+    foreach ($unjson as $key=>$value){
+        require("searchmoves.php?species=".$value->id);
+        
+        $tempq = json_decode(to_json("
+            SELECT id
+            FROM species
+            WHERE id=
+        ");
+        
+        $value->id);
+    }
+}
+//echo $json;
 
 ?>

@@ -46,14 +46,18 @@ function to_json($result) {
         while ($row = $result->fetch_assoc()) {
             $rowdata = array();
             foreach ($row as $key=>$val) {
-                $rowdata[$key]=str_replace("\r", "", $val);
+                $rowdata[$key]=utf8_encode(str_replace("\r", "", $val));
             }
             $obj[$i] = $rowdata;
             $i++;
         }
+        if (count($obj)==0) {
+            return "[]";
+        }
+//        var_dump($obj);
         return json_encode($obj);
     }
+    return "[]";
 }
-
 
 ?>
