@@ -70,6 +70,7 @@ function ($, React, reactBootstrap, api, PokemonFilterer, sortedTableMixin, rule
 							React.DOM.tbody(null, 
 							
 								data.map(function (a) {
+									var imgId = a.id < 100 ? '0'+a.id : a.id;
 									var imgSrc = "http://www.serebii.net/pokedex-xy/icon/"+a.id+".png";
 
 									return (
