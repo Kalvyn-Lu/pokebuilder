@@ -12,13 +12,8 @@ function ($, React, reactBootstrap, api, sortedTableMixin) {
 		mixins: [sortedTableMixin],
 		getInitialState: function () {
 			return {
-				moves: [],
-				moveFilterText: ''
+				stats: {}
 			}
-		},
-
-		componentDidMount: function () {
-			
 		},
 		
 		render: function () {
@@ -28,34 +23,14 @@ function ($, React, reactBootstrap, api, sortedTableMixin) {
 
 			return (
 				React.DOM.div(null, 
-					" stats "
+					" hp\tatk\tdef\tsatk\tsdef\tspd "+
+					"stats "
 				)
 			);
 		},
 
-		onMoveSelectedChange: function (move) {
-			return function (e) {
-				console.log('fired');
-				move = $.extend(true, {}, move);
-				move.isChecked = e.target.checked;
-				moves = this.state.moves.map(function (a) {
-					if (a.id === move.id) {
-						return move;
-					} else {
-						return a;
-					}
-				});
-
-				this.setState({ moves: moves });
-			}.bind(this);
-		},
-
-		onMoveFilterTextChange: function (e) {
-			this.setState({ moveFilterText: e.target.value });
-		},
-
-		moveFilter: function (move) {
-			return this.state.moveFilterText === '' || move.name.indexOf(this.state.moveFilterText) !== -1;
+		renderInput: function (label, key) {
+			
 		}
 	});
 

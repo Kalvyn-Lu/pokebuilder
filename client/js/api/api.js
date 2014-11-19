@@ -25,6 +25,7 @@ define(['jquery'], function ($) {
 		getNatures: function (ruleset, callback) {
 			if (!IS_TEST) {
 				$.get(urls.getNatures(ruleset), function (resp) {
+					console.log(resp);
 					callback(resp);
 				});
 			} else {
@@ -36,6 +37,7 @@ define(['jquery'], function ($) {
 		getItems: function (ruleset, callback) {
 			if (!IS_TEST) {
 				$.get(urls.getItems(ruleset), function (resp) {
+					console.log(resp);
 					callback(resp);
 				});
 			} else {
@@ -47,6 +49,7 @@ define(['jquery'], function ($) {
 		getAbilities: function (ruleset, species, callback) {
 			if (!IS_TEST) {
 				$.get(urls.getAbilities(ruleset, species), function (resp) {
+					console.log(resp);
 					callback(resp);
 				});
 			} else {
@@ -58,6 +61,7 @@ define(['jquery'], function ($) {
 		getMoves: function (ruleset, species, callback) {
 			if (!IS_TEST) {
 				$.get(urls.getMoves(ruleset, species), function (resp) {
+					console.log(resp);
 					callback(resp);
 				});
 			} else {
@@ -69,6 +73,7 @@ define(['jquery'], function ($) {
 		getPokemon: function (ruleset, filters, callback) {
 			if (!IS_TEST) {
 				$.get(urls.getPokemon(ruleset, filters), function (resp) {
+					console.log(resp);
 					callback(resp);
 				});
 			} else {
