@@ -153,8 +153,8 @@ function ($, React, reactBootstrap, api, ruleStore, sortedTableMixin) {
 			if (label !== '') {
 				return (
 					React.DOM.div( {className:"form-group"}, 
-						React.DOM.label( {for:key, className:"col-sm-6 control-label"}, label),
-						React.DOM.div( {className:"col-sm-6"}, 
+						React.DOM.label( {for:key, className:"col-sm-5 control-label"}, label),
+						React.DOM.div( {className:"col-sm-7"}, 
 							React.DOM.input( {type:type || "text", className:"form-control", id:key, onChange:this.onChange(key, type), value:this.props.data[key]} )
 						)
 					)
@@ -178,8 +178,8 @@ function ($, React, reactBootstrap, api, ruleStore, sortedTableMixin) {
 		renderFocuser: function (label, key, type) {
 			return (
 				React.DOM.div( {className:"form-group"}, 
-					React.DOM.label( {for:key, className:"col-sm-6 control-label"}, label),
-					React.DOM.div( {className:"col-sm-6"}, 
+					React.DOM.label( {for:key, className:"col-sm-5 control-label"}, label),
+					React.DOM.div( {className:"col-sm-7"}, 
 						React.DOM.button( {type:"button", className:"btn form-control", onClick:this.onFocusType(key, type)}, this.props.data[key] || '-')
 					)
 				)
