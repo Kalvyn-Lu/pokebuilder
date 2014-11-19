@@ -9,9 +9,9 @@ define(['jquery'], function ($) {
 	};
 	var urls = {
 		getItems: 		'/searchitems.php',
-		getAbilities:	function(ruleset, species) { return '/searchabilities.php?' + (!species ? '' : 'species='+species) + '&ruleset='+ruleset; },
-		getMoves:		function(ruleset, species) { return '/searchmoves.php?' + (!species ? '' : 'species='+species) + '&ruleset='+ruleset; },
-		getPokemon:		function(ruleset, args) { return '/searchpokemon.php?' + (!args ? '' : toQuery(args)) + '&ruleset='+ruleset; }
+		getAbilities:	function(ruleset, species) { return '../../server/query/searchabilities.php?' + (!species ? '' : 'species='+species) + '&ruleset='+ruleset; },
+		getMoves:		function(ruleset, species) { return '../../server/query/searchmoves.php?' + (!species ? '' : 'species='+species) + '&ruleset='+ruleset; },
+		getPokemon:		function(ruleset, args) { return '../../server/query/searchpokemon.php?' + (!args ? '' : toQuery(args)) + '&ruleset='+ruleset; }
 	};
 
 
