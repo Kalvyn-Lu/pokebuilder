@@ -27,22 +27,22 @@ define(['jquery'], function ($) {
 			});
 		},
 		getMoves: function (ruleset, species, callback) {
-			// $.get(urls.getMoves(ruleset, species), function (resp) {
-			// 	callback(resp);
-			// });
+			$.get(urls.getMoves(ruleset, species), function (resp) {
+				callback(resp);
+			});
 
-			setTimeout(function () {
-				callback(testMoves);
-			}, 250);
+			// setTimeout(function () {
+			// 	callback(testMoves);
+			// }, 250);
 		},
 		getPokemon: function (ruleset, filters, callback) {
-			// $.get(urls.getPokemon(ruleset, filters), function (resp) {
-			// 	callback(resp);
-			// });
+			$.get(urls.getPokemon(ruleset, filters), function (resp) {
+				callback(resp);
+			});
 
-			setTimeout(function () {
-				callback(testPokemon);
-			}, 250);
+			// setTimeout(function () {
+			// 	callback(testPokemon);
+			// }, 250);
 		},
 	}
 

@@ -20,7 +20,7 @@ function ($, React, reactBootstrap, api) {
 				);
 			}
 
-			var image = '';//'http://www.pkparaiso.com/imagenes/xy/sprites/animados'+(this.props.data.shiny?'-shiny/':'/')+this.props.data.pokemon.name.toLowerCase()+'.gif';
+			var image = 'http://www.pkparaiso.com/imagenes/xy/sprites/animados'+(this.props.data.shiny?'-shiny/':'/')+this.props.data.pokemon.name.toLowerCase()+'.gif';
 
 			return (
 				<div className="selected-container flexContainer">

@@ -71,7 +71,7 @@ function ($, React, reactBootstrap, api, PokemonFilterer, sortedTableMixin, rule
 							React.DOM.tbody(null, 
 							
 								data.map(function (a) {
-									var imgSrc = ''; //"http://www.pkparaiso.com/imagenes/xy/sprites/animados/"+a.name.toLowerCase()+".gif";
+									var imgSrc = "http://www.pkparaiso.com/imagenes/xy/sprites/animados/"+a.name.toLowerCase()+".gif";
 
 									return (
 										React.DOM.tr( {key:a.name, onClick:this.setTeamMember(a)}, 
