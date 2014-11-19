@@ -87,6 +87,15 @@
 }
 
 
+.selected-container .dropdown-toggle, .selected-container .btn-group {
+	width: 100%;
+}
+.selected-container .btn .caret {
+	top: 15px;
+	position: absolute;
+	right: 9px;
+}
+
 .query-container .result-table {
 	cursor: pointer;
 }

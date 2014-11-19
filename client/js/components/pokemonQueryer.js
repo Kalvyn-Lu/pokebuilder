@@ -44,8 +44,6 @@ function ($, React, reactBootstrap, api, PokemonFilterer, sortedTableMixin, rule
 		render: function () {
 			var headers = ['name','type1','type2','hp','atk','def','satk','sdef','spd'];
 			var sortIcon = this.renderSortIcon();
-
-			var asc = this.state.sortAsc ? 1 : -1;
 			var data = this.state.results.slice(0).sort(this.sortData);
 
 			return (

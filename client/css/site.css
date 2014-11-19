@@ -6,6 +6,7 @@
 
 .sliding-viewport {
 	overflow: hidden;
+	overflow-y: visible;
 }
 .sliding-container {
 	transition: margin .25s;
@@ -14,7 +15,6 @@
 .sliding-child {
 	float: left;
 	width:50%;
-	overflow: auto;
 }
 
 .marginAnimate {
