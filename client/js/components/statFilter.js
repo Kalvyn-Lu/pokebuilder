@@ -17,12 +17,10 @@ function ($, React, reactBootstrap, api, sortedTableMixin) {
 		},
 		
 		render: function () {
-			var headers = Object.keys(this.state.moves[0] || {}).filter(function(a){ return a !== 'isChecked' });
-			var data = this.state.moves.filter(this.moveFilter).sort(this.sortData);
-			var sortIcon = this.renderSortIcon();
-
+			
 			return (
 				<div>
+					{ this.renderInput('Min HP', 'hp')}
 					hp	atk	def	satk	sdef	spd
 					stats
 				</div>
@@ -30,7 +28,7 @@ function ($, React, reactBootstrap, api, sortedTableMixin) {
 		},
 
 		renderInput: function (label, key) {
-			
+
 		}
 	});
 
