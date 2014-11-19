@@ -111,6 +111,7 @@ function ($, React, reactBootstrap, api, PokemonFilterer, sortedTableMixin, rule
 				nick: pokemon.name,
 				level: 100,
 				shiny: false,
+				gender: 'M',
 				nature: '',
 				item: '',
 				ability: '',

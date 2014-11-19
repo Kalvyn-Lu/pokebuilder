@@ -5,9 +5,10 @@ define([
 'react-bootstrap',
 'build/js/api/api.js',
 'build/js/stores/store.js',
-'build/js/components/sortedTableMixin.js'],
+'build/js/components/sortedTableMixin.js',
+'build/js/utility/types.js'],
 
-function ($, React, reactBootstrap, api, ruleStore, sortedTableMixin) {
+function ($, React, reactBootstrap, api, ruleStore, sortedTableMixin, TYPES) {
 	var Panel = reactBootstrap.Panel;
 
 	var PokemonInfo = React.createClass({displayName: 'PokemonInfo',
@@ -135,7 +136,12 @@ function ($, React, reactBootstrap, api, ruleStore, sortedTableMixin) {
 										React.DOM.tr( {onClick:this.onSelectOption(a), style:{'cursor':'pointer'}}, 
 										
 											headers.map(function (key) {
-												return React.DOM.td(null, a[key])
+												var text = a[key];
+												if (key.indexOf('type') !== -1) {
+													text = TYPES[a[key]];
+												}
+
+												return React.DOM.td(null, text);
 											})
 										
 										)
