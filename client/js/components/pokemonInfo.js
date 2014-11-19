@@ -35,7 +35,7 @@ function ($, React, reactBootstrap, api, ruleStore, sortedTableMixin) {
 			this.updateIndendentFields(ruleset);
 
 			if (this.props.data) {
-				this.updateDependantFields(ruleset, this.props.data.id);	
+				this.updateDependantFields(ruleset, this.props.data.pokemon.id);	
 			}
 		},
 		updateIndendentFields: function (ruleset) {

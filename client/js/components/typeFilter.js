@@ -4,59 +4,55 @@ define([
 'react',
 'react-bootstrap',
 'build/js/api/api.js',
-'build/js/components/sortedTableMixin.js'],
+'build/js/components/sortedTableMixin.js',
+'build/js/utility/types.js'],
 
-function ($, React, reactBootstrap, api, sortedTableMixin) {
+function ($, React, reactBootstrap, api, sortedTableMixin, TYPES) {
 
 	var MoveFilter = React.createClass({
 		mixins: [sortedTableMixin],
 		getInitialState: function () {
 			return {
-				moves: [],
-				moveFilterText: ''
+				types: []
 			}
 		},
 
-		componentDidMount: function () {
-			
-		},
-		
 		render: function () {
-			var headers = Object.keys(this.state.moves[0] || {}).filter(function(a){ return a !== 'isChecked' });
-			var data = this.state.moves.filter(this.moveFilter).sort(this.sortData);
-			var sortIcon = this.renderSortIcon();
 
 			return (
 				<div>
-					types
+				{
+					Object.keys(TYPES).map(function (a) {
+						return (
+							<div className="checkbox">
+								<label>
+									<input type="checkbox" id="types" checked={this.state.types.indexOf(a) !== -1} onChange={this.onChange(a)} style={{'margin-right':'8px'}} />
+									{ TYPES[a] }
+								</label>
+							</div>
+						);
+					}.bind(this))
+				}
 				</div>
 			);
 		},
 
-		onMoveSelectedChange: function (move) {
+		onChange: function(a) {
 			return function (e) {
-				console.log('fired');
-				move = $.extend(true, {}, move);
-				move.isChecked = e.target.checked;
-				moves = this.state.moves.map(function (a) {
-					if (a.id === move.id) {
-						return move;
-					} else {
-						return a;
-					}
-				});
+				var types;
+				if (e.target.checked) {
+					types = this.state.types.concat(a);
+				} else {
+					types = this.state.types.filter(function (mem) {
+						return mem !== a;
+					});
+				}
+				
 
-				this.setState({ moves: moves });
+				this.setState({ types: types });
+				this.props.onFilterChange(types);
 			}.bind(this);
 		},
-
-		onMoveFilterTextChange: function (e) {
-			this.setState({ moveFilterText: e.target.value });
-		},
-
-		moveFilter: function (move) {
-			return this.state.moveFilterText === '' || move.name.indexOf(this.state.moveFilterText) !== -1;
-		}
 	});
 
 	return MoveFilter;

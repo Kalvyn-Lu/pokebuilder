@@ -6,9 +6,10 @@ define([
 'build/js/api/api.js',
 'build/js/components/pokemonFilterer.js',
 'build/js/components/sortedTableMixin.js',
-'build/js/stores/store.js'],
+'build/js/stores/store.js',
+'build/js/utility/types.js'],
 
-function ($, React, reactBootstrap, api, PokemonFilterer, sortedTableMixin, ruleStore) {
+function ($, React, reactBootstrap, api, PokemonFilterer, sortedTableMixin, ruleStore, TYPES) {
 	var Panel = reactBootstrap.Panel;
 	var PanelGroup = reactBootstrap.PanelGroup;
 
@@ -75,8 +76,8 @@ function ($, React, reactBootstrap, api, PokemonFilterer, sortedTableMixin, rule
 										React.DOM.tr( {key:a.name, onClick:this.setTeamMember(a)}, 
 											React.DOM.td( {className:"relative"}, React.DOM.img( {src:imgSrc, className:"center-img"} )),
 											React.DOM.td(null, a.name),
-											React.DOM.td(null, a.type1),
-											React.DOM.td(null, a.type2),
+											React.DOM.td(null, TYPES[a.type1]),
+											React.DOM.td(null, TYPES[a.type2]),
 											React.DOM.td(null, a.hp),
 											React.DOM.td(null, a.atk),
 											React.DOM.td(null, a.def),

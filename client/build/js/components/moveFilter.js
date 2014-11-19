@@ -89,6 +89,7 @@ function ($, React, reactBootstrap, api, sortedTableMixin, ruleStore) {
 				});
 
 				this.setState({ moves: moves });
+				this.props.onFilterChange(moves);
 			}.bind(this);
 		},
 
