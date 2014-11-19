@@ -1,25 +1,18 @@
-﻿Mew
-Mewtwo
-Celebi
-Jirachi
-Deoxys
-Kyogre
-Groudon
-Rayquaza
-Shaymin
-Darkrai
-Arceus
-Dialga
-Palkia
-Giratina
-Zekrom
-Reshiram
-Keldeo
-Meloetta
-Genesect
-Xerneas
-Yveltal
-Zygarde
-Diancie
-Hoopa
-Volcanion
+﻿Bright Powder
+Eject Button
+Fire Gem
+Water Gem
+Electric Gem
+Grass Gem
+Ice Gem
+Fighting Gem
+Poison Gem
+Ground Gem
+Flying Gem
+Psychic Gem
+Bug Gem
+Rock Gem
+Ghost Gem
+Dragon Gem
+Dark Gem
+Steel Gem

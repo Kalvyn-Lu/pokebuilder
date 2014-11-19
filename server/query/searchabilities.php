@@ -2,11 +2,7 @@
 
 require_once("getquery.php");
 
-$species = $_GET["species"];
-
-if (!$species) {
-    die("No species provided!");
-}
+$species = get("species");
 
 $query = "
 SELECT
@@ -14,7 +10,11 @@ SELECT
     a.name as \"name\",
     a.description as \"description\"
 FROM
-    ability as a,
+    ability as a";
+
+if ($species) {
+    $query.="
+    ,
     species as s
 WHERE
     s.id=$species
@@ -25,7 +25,7 @@ WHERE
         s.ability3=a.id
     )
 ;";
-echo "$query<br>";
+}
 $result = run_query($query);
 echo to_json($result);
 
