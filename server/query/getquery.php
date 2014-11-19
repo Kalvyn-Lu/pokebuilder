@@ -25,10 +25,18 @@ function get($key) {
 
 function dump($result) {
     if ($result->num_rows > 0) {
+        $first = true;
         $table = "<table>";
         // output data of each row
         while($row = $result->fetch_assoc()) {
             $table .= "<tr>";
+            if ($first) {
+                foreach ($row as $key=>$val) { 
+                    $table .= "<th>$key</th>";
+                }
+                $table.="</tr><tr>";
+                $first = false;
+            }
             foreach ($row as $key=>$val) {
                 $table .= "<td>" . $row[$key] . "</td>";
             }

@@ -4,6 +4,7 @@ require_once("getquery.php");
 
 $query = "
 SELECT
+    item.id as 'id',
     item.name as 'name',
     item.description as 'description'
 FROM

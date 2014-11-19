@@ -35,18 +35,18 @@ SELECT
     s.id as \"id\",
     s.name as \"name\",
     s.type1 as \"type1\",
-    s.type2 as \"type2\"
-";
-if ($maxstats || $minstats) {
-    $query.="
-    ,s.hp as \"hp\",
+    s.type2 as \"type2\",
+    s.hp as \"hp\",
     s.atk as \"atk\",
     s.def as \"def\",
     s.satk as \"satk\",
     s.sdef as \"sdef\",
-    s.spd as \"spd\"
+    s.spd as \"spd\",
+    s.vgc as \"vgc\",
+    s.smogon as \"smogon\",
+    s.po as \"po\"
     ";
-}
+
 $query.="FROM species as s ";
 
 $array = array();;
@@ -103,6 +103,7 @@ $result = run_query($query);
 
 $json = to_json($result);
 
+/*
 if ($moves) {
     $unjson = json_decode($json);
 
@@ -117,7 +118,8 @@ if ($moves) {
         
         $value->id);
     }
-}
-//echo $json;
+}*/
+
+echo $json;
 
 ?>

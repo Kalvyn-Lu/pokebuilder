@@ -1,5 +1,5 @@
-INSERT INTO species (pid,pname,ability1,ability2,ability3,hp,atk,def,spatk,spdef,spd,type1,type2) VALUES 
-(0,'Missingno',null,null,null,50,50,50,50,50,50,0,18),
+INSERT INTO species (id,name,ability1,ability2,ability3,hp,atk,def,satk,sdef,spd,type1,type2) VALUES 
+(0,'Missingno',0,0,0,50,50,50,50,50,50,0,18),
 (1,'Bulbasaur',65,0,34,45,49,49,65,65,45,11,3),
 (2,'Ivysaur',65,0,34,60,62,63,80,80,60,11,3),
 (3,'Venusaur',47,0,34,80,82,83,100,100,80,11,3),

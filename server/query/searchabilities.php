@@ -10,6 +10,7 @@ if (!$species) {
 
 $query = "
 SELECT
+    a.id as \"id\",
     a.name as \"name\",
     a.description as \"description\"
 FROM
