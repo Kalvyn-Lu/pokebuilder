@@ -59,8 +59,8 @@ function ($, React, reactBootstrap, api, sortedTableMixin, ruleStore) {
 						{
 							data.map(function (move) {
 								return (
-									<tr key={move.name}>
-										<td><input type="checkbox" checked={move.isChecked} onChange={this.onMoveSelectedChange(move)} /></td>
+									<tr key={move.name} onClick={this.onMoveSelectedChange(move)} className="pointer">
+										<td><input type="checkbox" checked={move.isChecked} /></td>
 										{	
 											headers.map(function (a) {
 												return <td>{move[a]}</td>;
@@ -79,7 +79,7 @@ function ($, React, reactBootstrap, api, sortedTableMixin, ruleStore) {
 		onMoveSelectedChange: function (move) {
 			return function (e) {
 				move = $.extend(true, {}, move);
-				move.isChecked = e.target.checked;
+				move.isChecked = !move.isChecked;
 				moves = this.state.moves.map(function (a) {
 					if (a.id === move.id) {
 						return move;
