@@ -26,16 +26,18 @@ function ($, React, reactBootstrap, api, PokemonFrame, PokemonEditor, ruleStore)
 			}.bind(this));
 
 			var selected = <PokemonEditor data={this.state.team[this.state.index]} index={this.state.index} setTeamMember={this.setTeamMember} onSelect={this.onSelect} />;
-			//<button type="button" className="btn btn-primary" onClick={this.translateToDownload}>Export Team</button>
+			//
 
 			return <div className="flexContainer flexColumn siteContent">
 						<h5>Rule Set</h5>
-						<ButtonGroup>
-							<Button onClick={this.setRuleSet('vgc')} className={(this.state.ruleset === 'vgc'?'btn-primary':'')}>VGC</Button>
-							<Button onClick={this.setRuleSet('smogon')} className={(this.state.ruleset === 'smogon'?'btn-primary':'')}>SMOGON</Button>
-							<Button onClick={this.setRuleSet('po')} className={(this.state.ruleset === 'po'?'btn-primary':'')}>PO</Button>
-						</ButtonGroup>
-						
+						<div>
+							<ButtonGroup className="left">
+								<Button onClick={this.setRuleSet('vgc')} className={(this.state.ruleset === 'vgc'?'btn-primary':'')}>VGC</Button>
+								<Button onClick={this.setRuleSet('smogon')} className={(this.state.ruleset === 'smogon'?'btn-primary':'')}>SMOGON</Button>
+								<Button onClick={this.setRuleSet('po')} className={(this.state.ruleset === 'po'?'btn-primary':'')}>PO</Button>
+							</ButtonGroup>
+							<button type="button" className="btn btn-primary right" onClick={this.translateToDownload}>Export Team</button>
+						</div>
 						<div className="team-container">{ team }</div>
 						{ selected }
 					</div>
@@ -59,38 +61,9 @@ function ($, React, reactBootstrap, api, PokemonFrame, PokemonEditor, ruleStore)
 		},
 
 		translateToDownload: function () {
-			var onInitFs = function(fs) {
-
-				fs.root.getFile('team.txt', {create: true}, function(fileEntry) {
-
-				    // Create a FileWriter object for our FileEntry (log.txt).
-				    fileEntry.createWriter(function(fileWriter) {
-
-				    	fileWriter.onwriteend = function(e) {
-				    		console.log('Write completed.');
-				    	};
-
-				    	fileWriter.onerror = function(e) {
-				    		console.log('Write failed: ' + e.toString());
-				    	};
-
-				      // Create a new Blob and write it to log.txt.
-
-				      var text = this.state.team.map(this.translateHelper).join('\n\n');
-				      console.log(text);
-				      var blob = new Blob([text], {type: 'text/plain'});
-
-				      fileWriter.write(blob);
-
-				  }.bind(this), errorHandler);
-
-				}.bind(this), errorHandler);
-
-			}.bind(this);
-
-			var errorHandler = function () {};
-			window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-			window.requestFileSystem(window.TEMPORARY, 1024*1024, onInitFs, errorHandler);
+			var text = this.state.team.map(this.translateHelper).join('\n\n');
+			document.location = 'data:Application/octet-stream,' +
+                         encodeURIComponent(text);
 		},
 		translateHelper: function (member) {
 			if (member === null) {
