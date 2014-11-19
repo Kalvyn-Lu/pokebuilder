@@ -40,7 +40,7 @@ module.exports = function (grunt) {
             copyLibs: {
                 files: [
                     {
-                        src: ['./bower_components/jquery/dist/jquery.min.js', './bower_components/react/react.min.js', './bower_components/history.js/scripts/bundled/html5/native.history.js'],
+                        src: ['./bower_components/jquery/dist/jquery.min.js', './bower_components/react/react.min.js', './bower_components/history.js/scripts/bundled/html5/native.history.js', './bower_components/react-bootstrap/react-bootstrap.js'],
                         dest: './temp/js/'
                     }
                 ]
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
             copyLibsDev: {
                 files: [
                     {
-                        src: ['./bower_components/jquery/dist/jquery.min.js', './bower_components/react/react.js', './bower_components/history.js/scripts/bundled/html5/native.history.js'],
+                        src: ['./bower_components/jquery/dist/jquery.min.js', './bower_components/react/react.js', './bower_components/history.js/scripts/bundled/html5/native.history.js', './bower_components/react-bootstrap/react-bootstrap.js'],
                         dest: './build/js/'
                     }
                 ]

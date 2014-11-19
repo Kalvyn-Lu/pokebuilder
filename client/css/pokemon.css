@@ -1,0 +1,92 @@
+.portrait {
+	border-radius: 10px;
+	background-color: #fff;
+	display: inline-block;
+	width: 14%;
+	height: 150px;
+	margin-right:3.2%;
+
+	float: left;
+	position: relative;
+
+	border: 1px solid #999;
+	cursor: pointer;
+}
+.portrait:last-child {
+	margin-right: 0px;
+}
+.portrait.selected {
+	border: 2px solid #777;
+}
+.portrait:hover {
+	background-color: #EEE;
+}
+	.portrait img {
+		position: absolute;
+		padding: 5%;
+		text-align: center;
+		max-width:95%;
+		max-height:95%;
+
+		position: absolute;
+		top: 50%;
+		left:50%;
+		transform: translate(-50%, -50%)
+	}
+	.portrait h5 {
+		text-align: center;
+	}
+.center-img, .portrait img {
+	position: absolute;
+	padding: 5%;
+	text-align: center;
+	max-width:95%;
+	max-height:95%;
+
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%)
+}
+.selected-container, .query-container {
+	border-top: solid 2px #999;
+	margin-top:15px;
+	padding-top:15px;
+}
+
+.team-container {
+	margin-top: 30px;
+}
+
+.img-container,
+.info-container,
+.ability-container,
+.stat-container {
+	border-radius: 15px;
+	padding: 5px;
+	min-height: 100%;
+	position: relative;
+	margin-right:1%;
+}
+.img-container {
+	width: 19%;
+	background-color: #aaa;
+}
+.info-container {
+	width: 19%;
+	background-color: #aaddaa;
+}
+.ability-container {
+	width: 19%;
+	background-color: #ddaaaa;
+}
+.stat-container {
+	width: 40%;
+	background-color: #aaaadd;
+	margin-right:0%;
+}
+
+
+.query-container .result-table {
+	cursor: pointer;
+}
