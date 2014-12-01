@@ -5,40 +5,14 @@ require_once("getquery.php");
 $s = get("species");
 
 if (!$s){
-    echo to_json(run_query("SELECT * from move"));
+    echo to_json(run_query("SELECT * FROM move"));
 }
 
 else{
-    $eggfile = file_get_contents("egg_moves.txt");
-    $elist = explode("\r\n", $eggfile);
-    $elist[0] = substr($elist[0], 0);
-    $eggdata = array();
-    foreach ($elist as $value) {
-        $pos = strpos($value, ":");
-        $id = substr($value, 0, $pos);
-        if ($id != $s) {
-            continue;
-        }
-        $eggdata = explode(" ", $value);
-        $eggdata = array_splice($eggdata, 1);
-        break;
-    }
-
-    $allfile = file_get_contents("all_moves.txt");
-    $alist = explode("\r\n", $allfile);
-    $alist[0] = substr($alist[0], 0);
-    $alldata = array();
-    foreach ($alist as $value) {
-        $pos = strpos($value, ":");
-        $id = substr($value, 0, $pos);
-        if ($id != $s) {
-            continue;
-        }
-        $alldata = explode(" ", $value);
-        $alldata = array_splice($alldata, 1);
-        break;
-    }
-
+    $moveset = json_decode(to_json(run_query("SELECT * FROM moveset WHERE id=$s")));
+    
+    $alldata = explode(" ", $moveset[0]->moves);
+    
     $query=
     "SELECT
         *
@@ -46,8 +20,31 @@ else{
         move
     WHERE id=";
     
-    $query.=implode(" OR id=", $alldata);
+    $query.=implode(" OR ID=", $alldata);
     $result = run_query($query);
-    echo to_json($result);
+    $data = json_decode(to_json($result));
+    
+    foreach($data as $key=>$value) {
+        $data[$key]->type = "learnset";
+    }
+        
+    $eggdata = explode(" ", $moveset[0]->egg_moves);
+    
+    $equery=
+    "SELECT
+        *
+    FROM
+        move
+    WHERE id=";
+    
+    $equery.=implode(" OR ID=", $eggdata);
+    $eresult = run_query($equery);
+    $edata = json_decode(to_json($eresult));
+    
+    foreach($edata as $key=>$value) {
+        $data[$key]->type = "egg move";
+    }
+    
+    echo json_encode($data);
 }
 ?>
