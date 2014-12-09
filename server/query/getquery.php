@@ -18,7 +18,7 @@ function run_query($query) {
 
 function get($key) {
     if (empty($_GET[$key])) {
-        return FALSE;
+        return False;
     }
     return $_GET[$key];
 }

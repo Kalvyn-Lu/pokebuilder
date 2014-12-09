@@ -2,6 +2,7 @@
 
 require_once("getquery.php");
 
+$ruleset = get("rules");
 
 $type1 = get("type1") ;
 $type2 = get("type2") ;
@@ -28,9 +29,11 @@ $mindef = get("mindef") ;
 $minsatk = get("minsatk") ;
 $minsdef = get("minsdef") ;
 $minspd = get("minspd") ;
-$minstats = $minhp || $minatk || $mindef || $minsatk || $minsdef || $minspd;
+$minstats = $minhp !== False || $minatk !== False || $mindef !== False || $minsatk !== False || $minsdef !== False || $minspd !== False;
 
-$query = "
+$array = array();
+$i = 0;
+$select = "
 SELECT
     s.id as \"id\",
     s.name as \"name\",
@@ -41,16 +44,28 @@ SELECT
     s.def as \"def\",
     s.satk as \"satk\",
     s.sdef as \"sdef\",
-    s.spd as \"spd\",
-    s.vgc as \"vgc\",
-    s.smogon as \"smogon\",
-    s.po as \"po\"
-    ";
+    s.spd as \"spd\"";
 
-$query.="FROM species as s ";
-
-$array = array();;
-$i = 0;
+$from ="FROM species as s";
+if ($ruleset !== False) {
+/*
+    $from .=",
+        (";die(dump(run_query("
+            SELECT
+                s.id as id
+            FROM
+                species as s
+            INNER JOIN
+                banspecies as b
+            ON
+                b.ruleset=$ruleset AND s.id = b.species")));
+        $a=";) as banmons";
+    $array[$i++] = "(s.id NOT IN (banmons.id))";*/
+    $from = "FROM species as s LEFT OUTER JOIN
+         banspecies as b ON
+        s.id = b.species AND b.ruleset=$ruleset";
+    $array[$i++] = "b.species IS NULL";
+}
 if ($type1) {
     $array[$i++] = "(s.type1='$type1' OR s.type2='$type1')";
 }
@@ -97,11 +112,13 @@ if ($maxspd) {
     $array[$i++] = "($maxspd >= s.spd)";
 }
 if ($i != 0) {
-    $query .= "WHERE ".implode("AND", $array);
+    $where = "WHERE ".implode("AND", $array);
 }
-$result = run_query($query);
-
-$json = to_json($result);
+else {
+    $where = "";
+}
+$query = "$select $from $where"; 
+$json = to_json(run_query($query));
 
 /*
 if ($moves) {
@@ -119,7 +136,6 @@ if ($moves) {
         $value->id);
     }
 }*/
-
 echo $json;
 
 ?>
