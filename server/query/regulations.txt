@@ -52,7 +52,7 @@ Ponyta
 Rapidash
 Slowpoke
 Slowbro
-Farfetch'd
+Farfetchd
 Seel
 Dewgong
 Shellder
@@ -101,8 +101,8 @@ Dratini
 Dragonair
 Dragonite
 Mewtwo
-mew
-Chikroita
+Mew
+Chikorita
 Bayleef
 Meganium
 Cyndaquil
@@ -110,7 +110,7 @@ Quilava
 Typhlosion
 Totodile
 Croconaw
-Feraligar
+Feraligatr
 Sentret
 Furret
 Hoothoot
@@ -139,7 +139,7 @@ Quagsire
 Espeon
 Umbreon
 Murkrow
-Slowing
+Slowking
 Misdreavus
 Unown
 Pineco
@@ -194,7 +194,7 @@ Chimchar
 Monferno
 Infernape
 Piplup
-Prinlup
+Prinplup
 Empoleon
 Starly
 Staravia
@@ -236,14 +236,15 @@ Skuntank
 Bronzor
 Bronzong
 Bonsly
-Mime Jr.
+Jr.
 Happiny
 Chatot
 Spiritomb
 Gible
 Gabite
 Garchomp
-Munchlax Riolu
+Munchlax
+Riolu
 Lucario
 Hippopotas
 Hippowdon
@@ -275,14 +276,14 @@ Mesprit
 Azelf
 Dialga
 Palkia
-Heatranm
+Heatran
 Regigigas
 Giratina
 Cresselia
 Phione
 Manaphy
 Darkrai
-Shaymine
+Shaymin
 Arceus
 Victini
 Snivy
@@ -322,7 +323,7 @@ Swoobat
 Drilbur
 Excadrill
 Audino
-Timbur
+Timburr
 Gurdurr
 Conkeldurr
 Tympole
@@ -369,7 +370,7 @@ Gothorita
 Gothitelle
 Solosis
 Duosion
-Reunclus
+Reuniclus
 Ducklett
 Swanna
 Vanillite
@@ -393,7 +394,7 @@ Klink
 Klang
 Klinklang
 Tynamo
-Eeletrik
+Eelektrik
 Eelektross
 Elgyem
 Beheeyem
@@ -404,7 +405,7 @@ Axew
 Fraxure
 Haxorus
 Cubchoo
-Beartick
+Beartic
 Cryogonal
 Shelmet
 Accelgor
@@ -420,7 +421,7 @@ Bouffalant
 Rufflet
 Braviary
 Vullaby
-Manibuzz
+Mandibuzz
 Heatmor
 Durant
 Deino
@@ -498,7 +499,7 @@ Goomy
 Sliggoo
 Goodra
 Klefki
-Phanump
+Phantump
 Trevenant
 Pumpkaboo
 Gourgeist
