@@ -5,9 +5,10 @@ define([
 'react-bootstrap',
 'build/js/api/api.js',
 'build/js/components/sortedTableMixin.js',
-'build/js/utility/types.js'],
+'build/js/utility/types.js',
+'build/js/components/chosen.js'],
 
-function ($, React, reactBootstrap, api, sortedTableMixin, TYPES) {
+function ($, React, reactBootstrap, api, sortedTableMixin, TYPES, Chosen) {
 
 	var MoveFilter = React.createClass({displayName: 'MoveFilter',
 		mixins: [sortedTableMixin],
@@ -21,38 +22,24 @@ function ($, React, reactBootstrap, api, sortedTableMixin, TYPES) {
 
 			return (
 				React.DOM.div(null, 
-				
-					Object.keys(TYPES).map(function (a) {
-						return (
-							React.DOM.div( {className:"checkbox"}, 
-								React.DOM.label(null, 
-									React.DOM.input( {type:"checkbox", id:"types", checked:this.state.types.indexOf(a) !== -1, onChange:this.onChange(a), style:{'margin-right':'8px'}} ),
-									 TYPES[a] 
-								)
-							)
-						);
-					}.bind(this))
-				
+					Chosen( {multiple:true, options:TYPES, selected:this.state.types, onSelected:this.onSelect, onRemove:this.onRemove, placeholder:"Select a type..."} )
 				)
 			);
 		},
-
-		onChange: function(a) {
-			return function (e) {
-				var types;
-				if (e.target.checked) {
-					types = this.state.types.concat(a);
-				} else {
-					types = this.state.types.filter(function (mem) {
-						return mem !== a;
-					});
-				}
-				
-
-				this.setState({ types: types });
-				this.props.onFilterChange(types);
-			}.bind(this);
+		onSelect: function (type) {
+			var types = this.state.types.concat(type);
+			
+			this.setState({ types: types });
+			this.props.onFilterChange(types);
 		},
+		onRemove: function (type) {
+			var types = this.state.types.filter(function (a) {
+				return a !== type;
+			});
+
+			this.setState({ types: types });
+			this.props.onFilterChange(types);
+		}
 	});
 
 	return MoveFilter;

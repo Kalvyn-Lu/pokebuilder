@@ -9,15 +9,20 @@ define(['jquery'], function ($) {
 
 	var toQuery = function (args) {
 		return Object.keys(args).map(function (a) {
-			return a+'='+args[a];
-		}).join('&');
+			return '&'+a+'='+args[a];
+		}).join('');
 	};
 	var urls = {
 		getItems: 		function(ruleset) { return '../server/query/searchitems.php?' + 'ruleset='+ruleset; },
 		getNatures:		function(ruleset) { return '../server/query/searchnatures.php?' + 'ruleset='+ruleset; },
 		getAbilities:	function(ruleset, species) { return '../server/query/searchabilities.php?' + (!species ? '' : 'species='+species) + '&ruleset='+ruleset; },
 		getMoves:		function(ruleset, species) { return '../server/query/searchmoves.php?' + (!species ? '' : 'species='+species) + '&ruleset='+ruleset; },
-		getPokemon:		function(ruleset, args) { return '../server/query/searchpokemon.php?'+ 'ruleset='+ruleset+ (!args ? '' : '&'+toQuery(args)); }
+		getPokemon:		function(ruleset, filters) { 
+			return '../server/query/searchpokemon.php?'+ 'ruleset='+ruleset+ 
+						toQuery(filters.types)+
+						toQuery(filters.stats)+
+						toQuery(filters.moves)
+		}
 	};
 
 

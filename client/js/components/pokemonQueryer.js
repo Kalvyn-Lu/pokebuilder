@@ -38,7 +38,7 @@ function ($, React, reactBootstrap, api, PokemonFilterer, sortedTableMixin, rule
 			this.setState({ isDirty: true });
 		},
 		queryPokemon: function () {
-			api.getPokemon(this.state.ruleset, {}, function(results) {
+			api.getPokemon(this.state.ruleset, this.state.filters, function(results) {
 				this.setState({ results: results });
 			}.bind(this));
 		},

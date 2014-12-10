@@ -6,11 +6,21 @@ define([
 'build/js/api/api.js',
 'build/js/components/moveFilter.js',
 'build/js/components/statFilter.js',
-'build/js/components/typeFilter.js'],
+'build/js/components/typeFilter.js',
+'build/js/utility/types.js'],
 
-function ($, React, reactBootstrap, api, MoveFilter, StatFilter, TypeFilter) {
+function ($, React, reactBootstrap, api, MoveFilter, StatFilter, TypeFilter, TYPES) {
 	var Panel = reactBootstrap.Panel;
 	var PanelGroup = reactBootstrap.PanelGroup;
+
+	var findTypeId = function (type) {
+		var index = -1;
+		for (var key in TYPES) {
+			if (type === TYPES[key]) {
+				return key;
+			}
+		}
+	};
 
 	var PokemonFilterer = React.createClass({displayName: 'PokemonFilterer',
 		getInitialState: function () {
@@ -50,9 +60,17 @@ function ($, React, reactBootstrap, api, MoveFilter, StatFilter, TypeFilter) {
 			this.props.onFilterChange(this.state);
 		},
 		onTypeFilterChange: function (filter) {
-			this.setState({ types: filter });
-			this.props.onFilterChange(this.state);
-		},
+			var state = $.extend(false, {}, this.state);
+			var transform = filter.slice(0,2).reduce(function (a,b,i) {
+				a['type' + (i+1)] = findTypeId(b);
+
+				return a;
+			}, {});
+			state.types = transform;
+
+			this.setState(state);
+			this.props.onFilterChange(state);
+		}
 	});
 
 	return PokemonFilterer;
