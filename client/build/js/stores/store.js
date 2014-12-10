@@ -1,9 +1,10 @@
 define(['jquery',
 'build/js/dispatcher.js',
-'build/js/utility/cookies.js'],
+'build/js/api/api.js'],
 
-function ($, dispatcher, cookies) {
-	var data = 'vgc';
+function ($, dispatcher, api) {
+	var selected = 'vgc';
+	var options = [];
 	var changeListeners = [];
 
 	var store = {
@@ -19,18 +20,25 @@ function ($, dispatcher, cookies) {
 
 		notifyListeners: function () {
 			changeListeners.forEach(function (a) {
-				a(data);
+				a(selected, options);
 			});
 		},
+		getRules: function () {
+			return options;
+		},
 		getRule: function () {
-			return data;
+			return selected;
 		},
 		setRule: function (rule) {
-			data = rule;
+			selected = rule;
 
 			store.notifyListeners();
 		}
 	}
+
+	api.getRulesets(function (resp) {
+		options = resp;
+	});
 
 	//Register this store to react appropriately to UI events
 	dispatcher.register(function (action) {
@@ -45,7 +53,8 @@ function ($, dispatcher, cookies) {
 		mixin: {
 			getInitialState: function () {
 				return {
-					ruleset: store.getRule()
+					ruleset: store.getRule(),
+					ruleOptions: store.getRules()
 				}
 			},
 			componentDidMount: function () {
@@ -54,11 +63,11 @@ function ($, dispatcher, cookies) {
 			componentWillUnmount: function () {
 				store.removeChangeListener(this.onRuleChange);
 			},
-			onRuleChange: function (data) {
-				this.setState({ ruleset: data });
+			onRuleChange: function (selected, options) {
+				this.setState({ ruleset: selected, ruleOptions: options });
 
 				if (this.onRuleChangeHook) {
-					this.onRuleChangeHook(data);
+					this.onRuleChangeHook(selected, options);
 				}
 			}
 		}

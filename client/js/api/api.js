@@ -22,7 +22,8 @@ define(['jquery'], function ($) {
 						toQuery(filters.types)+
 						toQuery(filters.stats)+
 						toQuery(filters.moves)
-		}
+		},
+		getRulesets: 	'../server/query/searchrulesets.php'
 	};
 
 
@@ -92,6 +93,19 @@ define(['jquery'], function ($) {
 				}, 250);
 			}
 		},
+		getRulesets: function (callback) {
+			if (!IS_TEST) {
+				$.get(urls.getRulesets, function (resp) {
+					resp = JSON.parse(resp);
+					console.log(resp);
+					callback(resp);
+				})
+			} else {
+				setTimeout(function () {
+					callback(testPokemon);
+				}, 250);
+			}
+		}
 	}
 
 	return api;

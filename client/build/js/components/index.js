@@ -32,9 +32,11 @@ function ($, React, reactBootstrap, api, PokemonFrame, PokemonEditor, ruleStore)
 						React.DOM.h5(null, "Rule Set"),
 						React.DOM.div(null, 
 							ButtonGroup( {className:"left"}, 
-								Button( {onClick:this.setRuleSet('vgc'), className:(this.state.ruleset === 'vgc'?'btn-primary':'')}, "VGC"),
-								Button( {onClick:this.setRuleSet('smogon'), className:(this.state.ruleset === 'smogon'?'btn-primary':'')}, "SMOGON"),
-								Button( {onClick:this.setRuleSet('po'), className:(this.state.ruleset === 'po'?'btn-primary':'')}, "PO")
+							
+								this.state.ruleOptions.map(function (a) {
+									return Button( {onClick:this.setRuleSet(a), className:(this.state.ruleset === a?'btn-primary':'')}, a)		
+								})
+							
 							),
 							React.DOM.button( {type:"button", className:"btn btn-primary right", onClick:this.translateToDownload}, "Export Team")
 						),
