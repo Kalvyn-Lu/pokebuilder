@@ -2,18 +2,26 @@
 
 require_once("getquery.php");
 
+$ruleset = get("rules");
+
+
+
 $query = "
 SELECT
-    item.id as 'id',
-    item.name as 'name',
-    item.description as 'description'
+    i.id as 'id',
+    i.name as 'name',
+    i.description as 'description'
 FROM
-    item as item;";
+    item as i";
 
-$result = run_query($query);
+if ($ruleset !== False) {
+    $query .= " LEFT OUTER JOIN
+        banitem as b ON
+        i.id = b.item AND b.ruleset=$ruleset
+    WHERE b.item IS NULL";
+}
 
-
-echo $json = to_json($result);
+echo $json = to_json(run_query($query));
 
 
 ?>
