@@ -7,10 +7,10 @@ $ruleset = get("rules");
 $type1 = get("type1") ;
 $type2 = get("type2") ;
 
-$move0 = get("move0") ;
-$move1 = get("move1") ;
-$move2 = get("move2") ;
-$move3 = get("move3") ;
+$move0 = get("move1") ;
+$move1 = get("move2") ;
+$move2 = get("move3") ;
+$move3 = get("move4") ;
 $moves = $move0 || $move1 || $move2 || $move3;
 
 $ability = get("ability") ;
