@@ -6,7 +6,7 @@ define(['jquery'], function ($) {
 	var testAbilities = [{"name":"Blaze","description":"Powers up Fire-type moves in a pinch."},{"name":"Solar Power","description":"Boosts Sp. Atk, but lowers HP in sunshine."}];
 	var testRules = [{"id":"0","name":"VGC Masters"},{"id":"1","name":"VGC Season 7"},{"id":"2","name":"SS Anything Goes"},{"id":"3","name":"SS Ubers"},{"id":"4","name":"SS OU"},{"id":"5","name":"SS UU"},{"id":"6","name":"SS RU"},{"id":"7","name":"SS NU"},{"id":"8","name":"PO Dreamworld"},{"id":"9","name":"PO Ubers"},{"id":"10","name":"PO OU"},{"id":"11","name":"PO UU"},{"id":"12","name":"PO LU"},{"id":"13","name":"PO NU"}];
 
-	var IS_TEST = true;
+	var IS_TEST = false;
 
 	var toQuery = function (args) {
 		return Object.keys(args).map(function (a) {
