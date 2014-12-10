@@ -2,7 +2,7 @@
 
 require_once("getquery.php");
 
-$ruleset = get("rules");
+$ruleset = get("ruleset");
 
 $type1 = get("type1") ;
 $type2 = get("type2") ;
@@ -64,7 +64,7 @@ if ($ruleset !== False) {
     $from = "FROM species as s LEFT OUTER JOIN
          banspecies as b ON
         s.id = b.species AND b.ruleset=$ruleset";
-    $array[$i++] = "b.species IS NULL";
+    $array[$i++] = "(b.species IS NULL)";
 }
 if ($type1) {
     $array[$i++] = "(s.type1='$type1' OR s.type2='$type1')";
