@@ -34,8 +34,8 @@ function ($, React, reactBootstrap, api, PokemonFrame, PokemonEditor, ruleStore)
 							ButtonGroup( {className:"left"}, 
 							
 								this.state.ruleOptions.map(function (a) {
-									return Button( {onClick:this.setRuleSet(a), className:(this.state.ruleset === a?'btn-primary':'')}, a)		
-								})
+									return Button( {onClick:this.setRuleSet(a), className:(this.state.ruleset === a.id?'btn-primary':'')}, a.name)		
+								}.bind(this))
 							
 							),
 							React.DOM.button( {type:"button", className:"btn btn-primary right", onClick:this.translateToDownload}, "Export Team")

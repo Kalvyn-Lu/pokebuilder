@@ -52,8 +52,17 @@ function ($, React, reactBootstrap, api, MoveFilter, StatFilter, TypeFilter, TYP
 			);
 		},
 		onMoveFilterChange: function (filter) {
-			this.setState({ moves: filter });
-			this.props.onFilterChange(this.state);
+			var state = $.extend(false, {}, this.state);
+			var transform = filter.filter(function (a) {
+				return a.isChecked;
+			}).reduce(function (a,b,i) {
+				a['move' + (i+1)] = b;
+				return a;
+			});
+			state.moves = transform;
+
+			this.setState(state);
+			this.props.onFilterChange(state);
 		},
 		onStatFilterChange: function (filter) {
 			this.setState({ stats: filter });

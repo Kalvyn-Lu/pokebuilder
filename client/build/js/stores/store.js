@@ -3,7 +3,7 @@ define(['jquery',
 'build/js/api/api.js'],
 
 function ($, dispatcher, api) {
-	var selected = 'vgc';
+	var selectedId = 0;
 	var options = [];
 	var changeListeners = [];
 
@@ -20,17 +20,17 @@ function ($, dispatcher, api) {
 
 		notifyListeners: function () {
 			changeListeners.forEach(function (a) {
-				a(selected, options);
+				a(selectedId, options);
 			});
 		},
 		getRules: function () {
 			return options;
 		},
 		getRule: function () {
-			return selected;
+			return selectedId;
 		},
 		setRule: function (rule) {
-			selected = rule;
+			selectedId = rule.id;
 
 			store.notifyListeners();
 		}
@@ -38,6 +38,8 @@ function ($, dispatcher, api) {
 
 	api.getRulesets(function (resp) {
 		options = resp;
+
+		store.notifyListeners();
 	});
 
 	//Register this store to react appropriately to UI events
@@ -63,11 +65,11 @@ function ($, dispatcher, api) {
 			componentWillUnmount: function () {
 				store.removeChangeListener(this.onRuleChange);
 			},
-			onRuleChange: function (selected, options) {
-				this.setState({ ruleset: selected, ruleOptions: options });
+			onRuleChange: function (selectedId, options) {
+				this.setState({ ruleset: selectedId, ruleOptions: options });
 
 				if (this.onRuleChangeHook) {
-					this.onRuleChangeHook(selected, options);
+					this.onRuleChangeHook(selectedId, options);
 				}
 			}
 		}
