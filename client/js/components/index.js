@@ -73,7 +73,8 @@ function ($, React, reactBootstrap, api, PokemonFrame, PokemonEditor, ruleStore)
 			}
 
 			return (
-				member.pokemon.name+' ('+member.gender+') @ '+member.item+'\n'+
+				(member.pokemon.name !== member.nick ? (member.nick + ' ('+member.pokemon.name+')') : member.pokemon.name)+' ('+member.gender+') @ '+member.item+'\n'+
+				(member.shiny? 'Shiny: Yes\n':'')+
 				'Trait: '+member.ability+'\n'+
 				'EVs: '+this.EVHelper(member)+'\n'+
 				member.nature+' Nature'+'\n'+
