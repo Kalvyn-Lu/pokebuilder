@@ -2,7 +2,7 @@
 
 require_once("getquery.php");
 
-$ruleset = get("rules");
+$ruleset = get("ruleset");
 
 
 

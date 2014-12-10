@@ -3,7 +3,7 @@
 require_once("getquery.php");
 
 $s = get("species");
-$ruleset = get("rules");
+$ruleset = get("ruleset");
 
 $query = "
 SELECT
