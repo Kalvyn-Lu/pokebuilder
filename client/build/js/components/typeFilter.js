@@ -19,8 +19,7 @@ function ($, React, reactBootstrap, api, sortedTableMixin, TYPES, Chosen) {
 		},
 
 		render: function () {
-
-			return (
+			return this.transferPropsTo(
 				React.DOM.div(null, 
 					Chosen( {multiple:true, options:TYPES, selected:this.state.types, onSelected:this.onSelect, onRemove:this.onRemove, placeholder:"Select a type..."} )
 				)

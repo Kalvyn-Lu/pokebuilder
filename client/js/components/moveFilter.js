@@ -34,7 +34,7 @@ function ($, React, reactBootstrap, api, sortedTableMixin, ruleStore) {
 			var data = this.state.moves.filter(this.moveFilter).sort(this.sortData);
 			var sortIcon = this.renderSortIcon();
 
-			return (
+			return this.transferPropsTo(
 				<div>
 					<div>
 						<input className="form-control" placeholder="filter..." value={this.state.moveFilterText} onChange={this.onMoveFilterTextChange} />

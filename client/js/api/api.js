@@ -10,6 +10,10 @@ define(['jquery'], function ($) {
 
 	var toQuery = function (args) {
 		return Object.keys(args).map(function (a) {
+			if (args[a] === '') { 
+				return ''; 
+			}
+
 			return '&'+a+'='+args[a];
 		}).join('');
 	};

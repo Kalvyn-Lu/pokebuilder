@@ -39,13 +39,9 @@ function ($, React, reactBootstrap, api, MoveFilter, StatFilter, TypeFilter, TYP
                         </Panel>
 					</PanelGroup>
 					<PanelGroup accordion>
-                        <Panel header="Filter By Stat" key={2}>
+                        <Panel header="Filter By Stat / Type" key={2}>
+                        	<TypeFilter className="margin-bottom-m" onFilterChange={this.onTypeFilterChange} />
                         	<StatFilter onFilterChange={this.onStatFilterChange} />
-                        </Panel>
-					</PanelGroup>
-					<PanelGroup accordion>
-                        <Panel header="Filter By Type" key={3}>
-                        	<TypeFilter onFilterChange={this.onTypeFilterChange} />
                         </Panel>
 					</PanelGroup>
 				</div>
@@ -65,8 +61,11 @@ function ($, React, reactBootstrap, api, MoveFilter, StatFilter, TypeFilter, TYP
 			this.props.onFilterChange(state);
 		},
 		onStatFilterChange: function (filter) {
-			this.setState({ stats: filter });
-			this.props.onFilterChange(this.state);
+			var state = $.extend(false, {}, this.state);
+			state.stats = filter;
+			
+			this.setState(state);
+			this.props.onFilterChange(state);
 		},
 		onTypeFilterChange: function (filter) {
 			var state = $.extend(false, {}, this.state);
