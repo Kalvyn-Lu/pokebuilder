@@ -71,7 +71,9 @@ function ($, React, reactBootstrap, api, PokemonFilterer, sortedTableMixin, rule
 							
 								data.map(function (a) {
 									var imgId = a.id < 100 ? '0'+a.id : a.id;
-									var imgSrc = "http://www.serebii.net/pokedex-xy/icon/"+a.id+".png";
+									imgId = a.id < 10 ? '0'+imgId : imgId;
+									
+									var imgSrc = "http://www.serebii.net/pokedex-xy/icon/"+imgId+".png";
 
 									return (
 										React.DOM.tr( {key:a.name, onClick:this.setTeamMember(a)}, 

@@ -56,9 +56,9 @@ function ($, React, reactBootstrap, api, MoveFilter, StatFilter, TypeFilter, TYP
 			var transform = filter.filter(function (a) {
 				return a.isChecked;
 			}).reduce(function (a,b,i) {
-				a['move' + (i+1)] = b;
+				a['move' + (i+1)] = b.id;
 				return a;
-			});
+			}, {});
 			state.moves = transform;
 
 			this.setState(state);
