@@ -34,9 +34,12 @@ if ($s){
     $where[$i++] = "(m.id IN $moves".
         ($subq[0]->egg_moves ? " OR m.id IN $egg_moves)" : ")");
 }
-
-$where = "WHERE ".implode(" AND ", $where);
-
+if ($i == 0) {
+    $where = "";
+}
+else {
+    $where = "WHERE ".implode(" AND ", $where);
+}
 echo to_json(run_query("$query $where"));
 
 
