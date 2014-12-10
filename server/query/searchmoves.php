@@ -37,7 +37,7 @@ if ($s){
 
 $where = "WHERE ".implode(" AND ", $where);
 
-echo to_json(dump(run_query("$query $where"));
+echo to_json(run_query("$query $where"));
 
 
 
